@@ -77,7 +77,7 @@ export default {
 
   serverMiddleware: [
     {
-      path : '/api/movie', // 이렇게 접근을 하면 middleware를 동작시킴 
+      path : '/api/movie', // 이렇게 접근을 하면 serverMiddleware를 동작시킴 
       handler:'~/server-middleware/movie.js'
     }
   ]

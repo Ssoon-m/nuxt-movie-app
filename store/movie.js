@@ -17,7 +17,9 @@ export default {
   }),
 
   // Vue.js computed 옵션과 유사합니다.
-  getters: {},
+  getters: {
+    
+  },
 
   // Vue.js methods 옵션과 유사합니다.
   // 상태(State)는 변이(Mutations)를 통해서만 값을 바꿀 수 있습니다.

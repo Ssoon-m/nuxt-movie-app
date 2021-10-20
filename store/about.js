@@ -7,5 +7,22 @@ export default {
     phone: '+82-10-3741-9532',
     image: 'images/Crayon.png'
 
-  })
+  }),
+  getters : {
+    getName(state){
+      return state.name;
+    },
+    getEmail(state){
+      return state.email;
+    },
+    getBlog(state){
+      return state.blog;
+    },
+    getPhone(state){
+      return state.phone;
+    },
+    getImage(state){
+      return state.image;
+    }
+  }
 }

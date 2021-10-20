@@ -6,14 +6,14 @@
         v-for="nav in navigations"
         :key="nav.name"
         class="nav-item">
-        <NuxtLink
+        <RouterLink
           :to="nav.href"
           active-class="active"
           :class="{ active: isMatch(nav.path) }"
           class="nav-link"
           exact>
           {{ nav.name }}
-        </NuxtLink>
+        </RouterLink>
       </div>
     </div>
     <div
@@ -54,10 +54,17 @@ export default {
     }
   },
   computed: {
-    ...mapState('about', [
-      'image',
-      'name'
-    ])
+    image(){
+      return this.$store.getters['about/getImage'];
+    },
+    name(){
+      return this.$store.getters['about/getName'];
+    }
+    /*
+    ...mapGetters('about', [
+      'getImage',
+      'getName'
+    ])*/
   },
   methods: {
     isMatch(path) {
