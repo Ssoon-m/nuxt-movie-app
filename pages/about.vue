@@ -12,7 +12,7 @@
       {{ name }}
     </div>
     <div>{{ email }}</div>
-    <div>{{ blog }}</div>
+    <div><a :href="blog">{{ blog }}</a></div>
     <div>{{ phone }}</div>
   </div>
 </template>
@@ -85,5 +85,8 @@ export default {
     font-family: "Oswald", sans-serif;
     margin-bottom: 20px;
   }
+}
+a{
+  color : $black;
 }
 </style>
