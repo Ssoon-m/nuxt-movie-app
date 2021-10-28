@@ -3,7 +3,7 @@ export default {
   state: () => ({
     name: 'SOONMIN',
     email: 'tkksm@naver.com',
-    blog: 'https://blog@blog',
+    blog: 'https://github.com/Ssoon-m',
     phone: '+82-10-3741-9532',
     image: 'images/Crayon.png'
 
