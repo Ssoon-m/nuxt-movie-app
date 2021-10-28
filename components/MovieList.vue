@@ -1,9 +1,14 @@
 <template>
   <div class="container">
+    <div 
+      v-if="getHangulError" 
+      class="errormessage">영화 제목은 영어로 검색해주세요!!</div>
     <div
       :class="{ 'no-result': !movies.length }"
       class="inner">
-      <Loader v-if="loading" />
+      <Loader 
+        absolute 
+        v-if="loading" />
       <div
         v-if="message"
         class="message">
@@ -36,7 +41,11 @@ export default {
       'movies',
       'loading',
       'message'
-    ])
+    ]),
+    getHangulError(){
+      return this.$store.getters['movie/getHangulError'];
+    }
+    
   }
 }
 </script>
@@ -44,11 +53,18 @@ export default {
 <style lang="scss" scoped>
 .container {
   margin-top: 30px;
+  position:relative;
+  .errormessage{
+    position:absolute;
+    top: -20px;
+    color:$red-500;
+  }
   .inner {
     background-color: $gray-200;
     padding: 10px 0;
     border-radius: 4px;
     text-align: center;
+    position:relative;
     &.no-result {
       padding: 70px 0;
     }

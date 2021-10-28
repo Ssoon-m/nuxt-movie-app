@@ -65,12 +65,23 @@ export default {
   },
   methods: {
     apply() {
-      this.$store.dispatch('movie/searchMovies', {
-        title: this.title,
-        type: this.type,
-        number: this.number,
-        year: this.year
-      })
+
+      if(/[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]/g.test(this.title)){
+        //this.$store.getters['movie/getHangulError'];
+        console.log("asdfasdfasdfasdfasdfasfasd");
+        this.$store.commit('movie/setHangulError', true);
+        return;
+      } 
+      else{
+        this.$store.commit('movie/setHangulError', false);
+        this.$store.dispatch('movie/searchMovies', {
+          title: this.title,
+          type: this.type,
+          number: this.number,
+          year: this.year
+        })
+      }
+      
     }
   }
 }

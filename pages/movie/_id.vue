@@ -83,7 +83,7 @@ export default {
   components: {
     Loader
   },
-  async asyncData({store,route,params}){
+  async asyncData({store,params}){
       await store.dispatch('movie/searchMovieWithId', {
         id: params.id // 바로 params라는 객체를 작성해서 주소부분에 params id를 꺼내올수있다.
       })

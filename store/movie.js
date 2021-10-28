@@ -12,13 +12,16 @@ export default {
   state: () => ({
     movies: [],
     message: _defaultMessage,
+    hangulError : false,
     loading: false,
     theMovie: {}
   }),
 
   // Vue.js computed 옵션과 유사합니다.
   getters: {
-    
+    getHangulError(state){
+      return state.hangulError;
+    },
   },
 
   // Vue.js methods 옵션과 유사합니다.
@@ -33,6 +36,9 @@ export default {
       state.movies = []
       state.message = _defaultMessage
       state.loading = false
+    },
+    setHangulError(state,payload){
+      state.hangulError = payload;
     }
   },
 
@@ -46,7 +52,7 @@ export default {
 
       commit('updateState', {
         message: '',
-        loading: true
+        loading: true // 로딩 시작
       })
 
       try {
